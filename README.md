@@ -1,18 +1,25 @@
-# Deploying a **ReactApp** to GitHub Pages
+# Hosting a **ReactApp** to GitHub Pages
 
 \* created using `create-react-app`
 
-# Introduction
+## Prerequisites
 
-In this tutorial, I'll show you how I deployed a React app—which I created using `create-react-app`—to GitHub Pages.
+1. An adequate version of [`Node.js`](https://nodejs.org/) is installed. Here's the adequate version I use:
 
-You can visit the deployed app, at [https://gitname.github.io/react-gh-pages/](https://gitname.github.io/react-gh-pages/).
+    ```sh
+    $ node --version
+    v6.10.1
+    ```
 
-This repository contains the files related to the app. The `master` branch contains the app's source code (the code the app's developers edit), and the `gh-pages` branch contains a *built* version of the app (i.e. the code that GitHub Pages serves to the app's visitors).
+2. An adequate version of  [`npm`](https://nodejs.org/) is installed. Here's the adequate version I use:
 
-The remainder of this document contains a tutorial on creating a React app (using `create-react-app`) and deploying that app to GitHub Pages.
+    ```sh
+    $ npm --version
+    3.10.10
+    ```
+3. An adequate version of [`create-react-app`](https://github.com/facebookincubator/create-react-app) is installed. Here's the adequate version I use:# Hosting a **ReactApp** to GitHub Pages
 
-# Tutorial
+\* created using `create-react-app`
 
 ## Prerequisites
 
@@ -30,6 +37,7 @@ The remainder of this document contains a tutorial on creating a React app (usin
     3.10.10
     ```
 3. An adequate version of [`create-react-app`](https://github.com/facebookincubator/create-react-app) is installed. Here's the adequate version I use:
+
 
     ```sh
     $ create-react-app --version
@@ -81,7 +89,7 @@ The remainder of this document contains a tutorial on creating a React app (usin
     
     ```js
     //...
-    "homepage": "http://gitname.github.io/react-gh-pages"
+    "homepage": "http://hanumankumarp.github.io/react-gh-pages"
     ```
     
     * In the existing `scripts` property, add a `predeploy` property and a `deploy` property, each having the values shown below:
@@ -97,7 +105,7 @@ The remainder of this document contains a tutorial on creating a React app (usin
     * **Shortcut:** Instead of adding those properties using a text editor; if I have `sed` installed on my system, I can add the properties by issuing the following shell commands:
     
     ```sh
-    $ sed -i '5i\  "homepage": "http://gitname.github.io/react-gh-pages",' ./package.json
+    $ sed -i '5i\  "homepage": "http://hanumankumarp.github.io/react-gh-pages",' ./package.json
     $ sed -i '15i\    "predeploy": "npm run build",' ./package.json
     $ sed -i '16i\    "deploy": "gh-pages -d build",' ./package.json
     ```
@@ -143,8 +151,4 @@ The remainder of this document contains a tutorial on creating a React app (usin
 
 1. [Facebook's tutorial on deploying a React app to GitHub Pages](https://facebook.github.io/create-react-app/docs/deployment#github-pages-https-pagesgithubcom)
 
-# Notes
 
-* I created this React app using [`create-react-app`](https://github.com/facebookincubator/create-react-app). By default, apps created using `create-react-app` have a README.md file that looks like [this](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md). Indeed, the README.md file you're now reading originally looked like that. I have since changed it to look the way it looks today.
-* Special thanks to GitHub, Inc., for providing us with the GitHub Pages hosting functionality at no extra charge.
-* And now, time to turn the default `create-react-app` app into something unique!
